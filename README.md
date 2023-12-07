@@ -47,4 +47,23 @@ class Main {
   }
 }
 ```
-出力結果 ： 私の名前は Kate Jones です
+出力結果 ： 私の名前はKate Jonesです  
+
+引数は複数渡すことも可能。メソッドが複数の引数を受け取るためには、仮引数をコンマ（,）で区切って定義する。  
+また、引数は左から順番に「第1引数、第2引数・・・」というように呼ぶ。
+```
+class Main {
+  public static void main(String[] args) {
+    printData("John Christopher Smith", 65);
+  }
+
+  public static void printData(String name, int age) {
+    System.out.println("私の名前は" + name + "です");
+    System.out.println("年齢は" + age + "歳です");
+    
+  }
+}
+```
+出力結果  
+私の名前はJohn Christopher Smithです  
+年齢は 65歳です
