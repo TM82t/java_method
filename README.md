@@ -75,3 +75,31 @@ class Main {
 
 ### void  
 voidは戻り値がないという意味。戻り値のない（returnがない）メソッドには、voidを指定。
+
+### メソッドのオーバーロード
+同名のメソッドは原則として定義できない。同メソッドが複数存在するとメソッドを呼び出した際、どのメソッドを用いればいいのかコンピュータがわからなくなるため。  
+ただし、引数の型や個数が違う場合は同名のメソッドを定義できる。同名のメソッドがあっても引数が違えばどれを呼べばいいのかコンピュータが判断できるため。  
+このように同名のメソッドを定義することをオーバーロードと言う。  
+例  
+```
+  public static void main(String[] args) {
+    printData(fullName("Kate", "Jones"), 27);
+    
+    printData(fullName("John", "Christopher", "Smith"), 65);
+  }
+
+  public static void printData(String name, int age) {
+    System.out.println("私の名前は" + name + "です");
+    System.out.println("年齢は" + age + "歳です");
+  }
+
+  public static String fullName(String firstName, String lastName) {
+    return firstName + " " + lastName;
+  }
+  
+  public static String fullName(String firstName, String middleName,String lastName) {
+    return firstName + " " + middleName + " " + lastName;
+  }
+  
+}
+```
