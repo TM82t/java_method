@@ -103,3 +103,30 @@ voidは戻り値がないという意味。戻り値のない（returnがない�
   
 }
 ```
+
+### メソッドの組み合わせ  
+メソッドは、mainメソッド以外のメソッドから呼び出すことも可能。  
+例  
+```
+class Main {
+  public static void main(String[] args) {
+    printData(1.6, 50.0);
+    printData(1.75, 80.0);
+  }
+
+  public static void printData(double height, double weight) {
+    System.out.println("身長は" + height + "mです");
+    System.out.println("体重は" + weight + "kgです");
+    
+    double bmi = bmi(height, weight);
+    
+    System.out.println("BMIは" + bmi + "です");
+    
+  }
+  
+  public static double bmi(double height, double weight) {
+    return weight / height / height;
+  }
+  
+}
+```
